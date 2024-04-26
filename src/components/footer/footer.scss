@@ -1,0 +1,29 @@
+@import "/src/index.scss";
+footer {
+  background-color: var(--tint-blue);
+  margin-top: 15vh;
+  .container {
+    @include flex($gap: 35%, $alignItems: start);
+    // flex-wrap: wrap;
+    padding: 5% 0;
+  }
+  h2,
+  p {
+    color: #fff;
+    text-align: left;
+  }
+  .social-icons {
+    @include flex($justifyContent: start, $gap: 2rem);
+    margin-top: 2.8rem;
+  }
+  @media screen and (max-width: 760px) {
+    .container {
+        gap: 5rem;
+    }
+  }
+  @media screen and (max-width: 532px) {
+    .container {
+        flex-wrap: wrap-reverse;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+
+@import '/src/index.scss';
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #bbbbcb;
+}
+.active-page {
+  color: #fff;
+}
+.menu {
+  display: none;
+}
+header {
+  background-color: var(--tint-blue);
+  padding: min(2%, 1.8rem) 0;
+  .container {
+    @include flex;
+    .nav-wrapper {
+      @include flex($gap: clamp(3.6rem, 4vw, 4.8rem));
+    }
+    ul {
+      @include flex($gap: 3.2rem);
+      a {
+        font-size: min(1.7vw, 1.6rem);
+        transition: ease 0.4s;
+
+        &:hover {
+          color: #d6d6d6;
+        }
+      }
+    }
+    button {
+      font-size: 1.6rem;
+      padding: 1.6rem clamp(2rem, 3vw, 4.8rem);
+      color: #fff;
+      background: transparent;
+      border-radius: 4.8rem;
+      border-color: #f4f6fc20;
+      border-style: solid;
+      transition: ease 0.4s;
+      &:hover {
+        background-color: #f4f6fc20;
+        cursor: pointer;
+      }
+    }
+  }
+  @media screen and (max-width: 375px) {
+    .logo {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    nav {
+      display: none;
+    }
+    .menu {
+      display: block;
+      width: 3.9rem;
+    }
+    .logo-wrapper {
+      @include flex($gap: min(10%, 3rem));
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@import '/src/index.scss';
+
+form {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto auto auto; // Define 5 rows, where each row is auto-sized
+      grid-template-areas:
+        "name email"
+        "subject1 subject2"
+        "message message"
+        "button notin";
+        max-width: 1061px;
+        margin: 6.4rem auto;
+        padding: 6.5vh 7.7vw;
+        background-color: var(--grey);
+        border-radius: 1.2rem;
+    }
+  
+    label {
+      font-size: 1.8rem;
+      color: #000;
+    }
+  
+    input,
+    textarea {
+      width: 100%; // Ensures both input and textarea occupy full width
+      padding: 1.8rem 3.2rem;
+      border-radius: 8px;
+      border: 1px solid #00000012;
+      box-sizing: border-box;
+      background-color: transparent;
+      outline: none;
+      margin-top: 1rem;
+    }
+    input {
+        height: 6.4rem;
+    }
+    input::placeholder {
+        color: #000;
+    }
+  
+    button {
+      padding: 10px 20px;
+      background-color: var(--dark-blue);
+      color: #fff;
+      border: none;
+      border-radius: 4.1rem;
+      cursor: pointer;
+      max-width: 254px;
+      height: 6.4rem;
+      font-size: 1.8rem;
+      transition: ease .2s;
+        &:hover{
+            background-color: #282938cc;
+        }
+    }
+  
+    .name {
+      grid-area: name;
+    }
+  
+    .email {
+      grid-area: email;
+    }
+  
+    .subject1 {
+      grid-area: subject1;
+    }
+  
+    .subject2 {
+      grid-area: subject2;
+    }
+  
+    .message {
+      grid-area: message;
+    }
+  
+    #submitBtn {
+      grid-area: button;
+    }
+  
+    @media screen and (max-width: 580px) {
+      form {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto; // Reduce the number of rows for larger screens
+        grid-template-areas:
+          "name" 
+          "email"
+          "subject1" 
+          "subject2"
+          "message"
+          "button";
+      }
+      button {
+        max-width: 100%;
+      }
+      label {
+        text-align: right;
+        display: inline-block;
+        margin-top: 2rem;
+      }
+    }
+
+  
+  
+  
+  
+  
